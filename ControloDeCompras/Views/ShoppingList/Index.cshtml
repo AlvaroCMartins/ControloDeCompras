@@ -1,0 +1,31 @@
+﻿@model IEnumerable<ShoppingList>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lista de compras</h1>
+
+<table class="table-bordered table-striped" style="width:100%;">
+    <thead>
+        <tr>
+            <th>Género</th>
+            <th>Nome</th>
+            <th>Variedade</th>
+            <th>Quantidade</th>
+            <th>Preço</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (ShoppingList obj in Model)
+        {
+            <tr>
+                <td>@obj.Genero</td>
+                <td>@obj.Nome</td>
+                <td>@obj.Variedade</td>
+                <td>@obj.Quantidade</td>
+                <td>@obj.Preco</td>
+            </tr>
+        }
+    </tbody>
+</table>
