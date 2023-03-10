@@ -1,0 +1,43 @@
+﻿@model ShoppingList
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h3 class="text-info">Adicionar artigo</h3>
+            <hr />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Genero"></label>
+            <input asp-for="Genero" class="form-control" placeholder="Sumo / Carne / Detergente / Vinho / Fruta..." />
+            <span asp-validation-for="Genero" class="text-warning"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Nome"></label>
+            <input asp-for="Nome" class="form-control" placeholder="Coca Cola / Porco / Superpop / Reguengos / Tomate..." />
+            <span asp-validation-for="Nome" class="text-warning"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Variedade"></label>
+            <input asp-for="Variedade" class="form-control" placeholder="1,75 / Febras / Ultra Concentrado / Reserve 2020 T / Coração de Boi" />
+            <span asp-validation-for="Variedade" class="text-warning"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Quantidade"></label>
+            <input asp-for="Quantidade" class="form-control" placeholder="2 / 1 / 5 / 15 " />
+            <span asp-validation-for="Quantidade" class="text-warning"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Preco"></label>
+            <input asp-for="Preco" class="form-control" placeholder="2,15 / 3,99 / 4,73 / 20,45" />
+            <span asp-validation-for="Preco" class="text-warning"></span>
+        </div>
+
+        <button type="submit" class="btn btn-success">Adicionar</button>
+        <a asp-controller="ShoppingList" asp-action="Index" class="btn btn-danger">Voltar</a>
+    </div>
+
+</form>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

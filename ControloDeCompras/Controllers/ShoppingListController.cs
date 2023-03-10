@@ -19,5 +19,30 @@ namespace ControloDeCompras.Controllers
 
             return View(objShoppingList);
         }
+
+        // Get
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // Post
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(ShoppingList obj)
+        {
+            if(obj.Genero == obj.Nome)
+            {
+                ModelState.AddModelError("Genero", "Os campos Genero e Nome não podem ter o mesmo valor.");
+            }
+
+            if (ModelState.IsValid)
+            {
+                _db.ShoppingLists.Add(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(obj);
+        }
     }
 }

@@ -7,6 +7,7 @@ namespace ControloDeCompras.Models
         [Key]
         public int Id { get; set; }
 
+
         [Required(ErrorMessage = "O genero é de preenchimento obrigatório.")]
         public string Genero { get; set; } = null!;
 
@@ -21,6 +22,7 @@ namespace ControloDeCompras.Models
         public int Quantidade { get; set; }
 
 
+        [Display(Name = "Preço")]
         public double? Preco { get; set; }
 
     }
